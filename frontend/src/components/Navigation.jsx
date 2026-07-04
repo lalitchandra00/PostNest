@@ -5,42 +5,43 @@ import React from 'react'
 
 const Navigation = () => {
   return (
-    <nav className="p-4 flex justify-between">
-      <div className = "">
-        <text class="text-2xl font-bold tracking-tight text-[#2B3B4E]">
-          Post<span class="text-[#B4421A] font-medium">Nest</span>
-        </text>
+    <nav className="flex items-center justify-between rounded-2xl border border-white/70 bg-white/70 px-4 py-3 shadow-sm backdrop-blur sm:px-5">
+      <div>
+        <h1 className="text-2xl font-bold tracking-tight text-slate-800 sm:text-3xl">
+          Post<span className="text-[#c65a2e]">Nest</span>
+        </h1>
+        <p className="text-xs text-slate-500 sm:text-sm">Your space to read, write, and connect</p>
       </div>
-      <div className="flex  gap-10 text-lg">
+      <div className="flex items-center gap-2 text-sm font-medium sm:gap-4 sm:text-base">
         <NavLink
-          to='/home'
+          to='/'
           className={({ isActive }) =>
-            `block py-2 pr-4 pl-3 duration-200 ${isActive
-              ? "text-orange-700"
-              : "text-gray-700"
-            } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+            `rounded-full px-3 py-2 transition ${isActive
+              ? 'bg-[#2b3b4e] text-white shadow-sm'
+              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+            }`
           }
         >Home</NavLink>
 
         <NavLink
-          to='/post'
+          to='/posts'
           className={({ isActive }) =>
-            `block py-2 pr-4 pl-3 duration-200 ${isActive
-              ? "text-orange-700"
-              : "text-gray-700"
-            } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+            `rounded-full px-3 py-2 transition ${isActive
+              ? 'bg-[#2b3b4e] text-white shadow-sm'
+              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+            }`
           }
-        >Post</NavLink>
+        >Posts</NavLink>
 
         <NavLink
-          to='/login'
+          to='/profile'
           className={({ isActive }) =>
-            `block py-2 pr-4 pl-3 duration-200 ${isActive
-              ? "text-orange-700"
-              : "text-gray-700"
-            } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+            `rounded-full px-3 py-2 transition ${isActive
+              ? 'bg-[#2b3b4e] text-white shadow-sm'
+              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+            }`
           }
-        >Logout</NavLink>
+        >Profile</NavLink>
       </div>
     </nav>
 
