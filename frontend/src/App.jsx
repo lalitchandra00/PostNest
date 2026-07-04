@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f7f1e8] via-[#f8f5ef] to-[#edf2f7] text-slate-800">
       <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-4 sm:px-6 lg:px-8">
-        {pathname !== '/login' && pathname !== '/signup' && <Navigation />}
+        {pathname !== '/signup' && pathname !== '/login' && <Navigation />}
         <main className="flex-1 pt-4 sm:pt-6">
           <Routes>
             <Route path="/" element={<Home />} />
