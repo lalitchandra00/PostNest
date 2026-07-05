@@ -1,11 +1,11 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 import Home from './pages/home'
 import Posts from './pages/posts'
 import Profile from './pages/profile'
 import Signup from './pages/signup'
 import Login from './pages/login'
-
 import './App.css'
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
           </Routes>
+          {pathname !== '/signup' && pathname !== '/login' && <Footer />}
         </main>
       </div>
     </div>
