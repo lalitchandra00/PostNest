@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
@@ -6,10 +7,12 @@ import Posts from './pages/posts'
 import Profile from './pages/profile'
 import Signup from './pages/signup'
 import Login from './pages/login'
+import {useDispatch} from 'react-redux';
 import './App.css'
 
 function App() {
   const { pathname } = useLocation()
+  const {loading, setLoading} = useState(true)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f7f1e8] via-[#f8f5ef] to-[#edf2f7] text-slate-800">
