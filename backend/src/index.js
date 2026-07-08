@@ -1,9 +1,12 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import dns from 'dns'
 import { DB_NAME } from './constants.js'
 import app from './app.js'
 
 dotenv.config({ path: './.env' })
+
+dns.setServers(['8.8.8.8', '1.1.1.1'])
 
 async function connectDB() {
   try {

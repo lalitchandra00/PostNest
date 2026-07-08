@@ -36,4 +36,38 @@ router.post('/signup', upload.single('profilepic'), async (req, res) => {
   }
 })
 
+router.post('/login', async (req, res) => {
+  try {
+    const { username, email, password } = req.body
+    if (!username || !email || !password) {
+      return res.json({ success: false, message: 'Email and password are required' })
+    }
+
+    const user = await User.findOne({ email })
+    if (!user) {
+      return res.json({ success: false, message: 'Invalid email or password' })
+    }
+
+    const isPasswordCorrect = await user.isPasswordCorrect(password)
+    if (!isPasswordCorrect) {
+      return res.json({ success: false, message: 'Invalid email or password' })
+    }
+
+    const accessToken = user.generateAccessToken()
+    const refreshToken = user.generateRefreshToken()
+
+    res.cookie('refreshToken', refreshToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'strict',
+    })
+
+    const loggedInUser = await User.findById(user._id).select('-password')
+
+    res.json({ success: true, data: { user: loggedInUser, accessToken } })
+  } catch (error) {
+    res.json({ success: false, message: error.message })
+  }
+})
+
 export default router
