@@ -24,6 +24,7 @@ function Login() {
       const res = await fetch('http://localhost:8000/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify(formData),
       })
       const data = await res.json()
@@ -35,6 +36,7 @@ function Login() {
         setError(data.message)
       }
     } catch (err) {
+      console.error("Login error:", err)
       setError('Something went wrong. Please try again.')
     }
   }

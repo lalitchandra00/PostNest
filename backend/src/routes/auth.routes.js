@@ -38,8 +38,8 @@ router.post('/signup', upload.single('profilepic'), async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const { username, email, password } = req.body
-    if (!username || !email || !password) {
+    const { email, password } = req.body
+    if (!email || !password) {
       return res.json({ success: false, message: 'Email and password are required' })
     }
 
@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
 
     const isPasswordCorrect = await user.isPasswordCorrect(password)
     if (!isPasswordCorrect) {
-      return res.json({ success: false, message: 'Invalid email or password' })
+      return res.json({ success: false, message: 'Invalid password' })
     }
 
     const accessToken = user.generateAccessToken()
