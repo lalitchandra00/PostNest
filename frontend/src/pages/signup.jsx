@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { login } from '../app/authSlice'
 
 function signup() {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
   const [formData, setFormData] = useState({
     name: '',
     username: '',
@@ -37,16 +34,19 @@ function signup() {
     try {
       const res = await fetch('http://localhost:8000/api/signup', {
         method: 'POST',
+        credentials : 'include',
         body: fd,
       })
       const data = await res.json()
       if (data.success) {
-        dispatch(login(data.data))
-        navigate('/')
+
+        navigate('/login')
+
       } else {
         setError(data.message)
       }
     } catch (err) {
+      console.error("Signup error:", err)
       setError('Something went wrong. Please try again.')
     }
   }
