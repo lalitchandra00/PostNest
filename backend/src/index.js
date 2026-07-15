@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import dns from 'dns'
+import dns from 'node:dns'
 import { DB_NAME } from './constants.js'
 import app from './app.js'
 
