@@ -23,26 +23,32 @@ function Login() {
                         Login Form
                     </button>
                 </span>
+                
+                {form === 'Signup' ?
+                    <form className="border-2 rounded-xl w-72 p-5 flex flex-col gap-3 shadow-lg" onSubmit={handleSubmit}>
+                        {form === 'Signup'}
 
-                <form className="border-2 rounded-xl w-72 p-5 flex flex-col gap-3 shadow-lg" onSubmit={handleSubmit}>
-                    {form === 'Signup'}
+                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Username" type="text" />
+                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Email" type="email" />
+                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Password" type="password" />
+                        <button className = "border-2 w-fit self-center p-1 rounded-md" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                    : 
+                    <form className="border-2 rounded-xl w-72 p-5 flex flex-col gap-3 shadow-lg" onSubmit={handleSubmit}>
+                        {form === 'Login'}
+                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Email" type="email" />
+                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Password" type="password" />
+                        <button className = "border-2 w-fit self-center p-1 rounded-md" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                }
 
-                    <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Username" type="text" />
-                    <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Email" type="email" />
-                    <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Password" type="password" />
-                    <button className = "border-2 w-fit self-center p-1 rounded-md" type="submit">
-                        Submit
-                    </button>
-                </form>
+                
 
-                <form className="border-2 rounded-xl w-72 p-5 flex flex-col gap-3 shadow-lg" onSubmit={handleSubmit}>
-                    {form === 'Login'}
-                    <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Email" type="email" />
-                    <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Password" type="password" />
-                    <button className = "border-2 w-fit self-center p-1 rounded-md" type="submit">
-                        Submit
-                    </button>
-                </form>
+                
             </div>
         </>
     )
