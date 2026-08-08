@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Login() {
+function Auth() {
     const [form, setForm] = useState('Signup')
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -54,4 +54,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Auth
