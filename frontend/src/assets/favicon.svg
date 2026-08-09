@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6D5CFF"/>
+      <stop offset="100%" stop-color="#4F2BFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Nest -->
+  <g fill="none" stroke="url(#purple)" stroke-width="9"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 176 C39 153, 43 131, 57 112"/>
+    <path d="M62 199 C44 177, 39 154, 49 132"/>
+    <path d="M78 218 C55 199, 47 180, 52 159"/>
+    <path d="M252 176 C261 153, 257 131, 243 112"/>
+    <path d="M238 199 C256 177, 261 154, 251 132"/>
+    <path d="M222 218 C245 199, 253 180, 248 159"/>
+
+    <path d="M53 184 C86 211, 117 224, 150 224 C183 224, 214 211, 247 184"/>
+    <path d="M62 207 C94 232, 121 242, 150 242 C179 242, 206 232, 238 207"/>
+    <path d="M75 164 C99 185, 124 194, 150 194 C176 194, 201 185, 225 164"/>
+    <path d="M72 219 C102 239, 129 249, 150 249 C171 249, 198 239, 228 219"/>
+  </g>
+
+  <!-- Feather -->
+  <path
+    d="M137 170 C136 125, 155 78, 205 43
+       C202 88, 183 130, 137 170 Z"
+    fill="url(#purple)"
+  />
+
+  <path
+    d="M139 166 C159 137, 180 107, 199 72"
+    fill="none"
+    stroke="#11101B"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+
+  <!-- Feather barbs -->
+  <path d="M157 129 L143 112" stroke="#11101B" stroke-width="5" stroke-linecap="round"/>
+  <path d="M174 103 L160 88" stroke="#11101B" stroke-width="5" stroke-linecap="round"/>
+</svg>
