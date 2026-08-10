@@ -1,57 +1,18 @@
-import { useState } from 'react'
+import React from 'react'
+import bgImage from "../assets/bgImage.png"
+import logo from "../assets/logo.svg"
 
 function Login() {
-    const [form, setForm] = useState('Signup')
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        alert('Form Submitted')
-    }
-    return (
-        <>
-            <div className="flex flex-col min-h-screen items-center justify-center gap-3">
-                <span className="flex gap-2">
-                    <button
-                        className={`p-2 border-2 rounded-2xl ${form === 'Signup' ? 'bg-blue-500 text-white' : ''}`}
-                        onClick={() => setForm('Signup')}
-                    >
-                        Signup Form
-                    </button>
-                    <button
-                        className={`p-2 border-2 rounded-2xl ${form === 'Login' ? 'bg-blue-500 text-white' : ''}`}
-                        onClick={() => setForm('Login')}
-                    >
-                        Login Form
-                    </button>
-                </span>
-                
-                {form === 'Signup' ?
-                    <form className="border-2 rounded-xl w-72 p-5 flex flex-col gap-3 shadow-lg" onSubmit={handleSubmit}>
-                        {form === 'Signup'}
-
-                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Username" type="text" />
-                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Email" type="email" />
-                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Password" type="password" />
-                        <button className = "border-2 w-fit self-center p-1 rounded-md" type="submit">
-                            Submit
-                        </button>
-                    </form>
-                    : 
-                    <form className="border-2 rounded-xl w-72 p-5 flex flex-col gap-3 shadow-lg" onSubmit={handleSubmit}>
-                        {form === 'Login'}
-                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Email" type="email" />
-                        <input className="border-2 shadow-sm rounded-md p-1.5" placeholder="Password" type="password" />
-                        <button className = "border-2 w-fit self-center p-1 rounded-md" type="submit">
-                            Submit
-                        </button>
-                    </form>
-                }
-
-                
-
-                
-            </div>
-        </>
-    )
+  return (
+    <div className = "min-h-screen">
+      <img className = "absolute top-0 left-0 h-full w-full"
+      src= {bgImage} alt="bgImage Error" />
+      <div>
+        <img className = "h-15"
+        src= {logo} alt="logo Error" />
+      </div>
+    </div>
+  )
 }
 
-export default Login 
+export default Login

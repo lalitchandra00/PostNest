@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "cookie-parser": "^1.4.7",
-    "cors": "^2.8.6",
-    "lucide-react": "^1.30.0"
+    "cors": "^2.8.6"
   }
 }
