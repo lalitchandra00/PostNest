@@ -17,15 +17,21 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={ !user ? <Login /> : <Layout />} />
-        <Route path="/feed" element={<Feed />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/messages/:userId" element={<ChatBox />} />
-        <Route path="/discover" element={<Discover />} />
-        <Route path="/createpost" element={<CreatePost />} />
-        <Route path="/connections" element={<Connections />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/:profileId" element={<Profile />} />
+        <Route path="/" element={user ? <Layout /> : <Login />}>
+          {user ? (
+            <>
+              <Route index element={<Feed />} />
+              <Route path="feed" element={<Feed />} />
+              <Route path="messages" element={<Messages />} />
+              <Route path="messages/:userId" element={<ChatBox />} />
+              <Route path="discover" element={<Discover />} />
+              <Route path="createpost" element={<CreatePost />} />
+              <Route path="connections" element={<Connections />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="profile/:profileId" element={<Profile />} />
+            </>
+          ) : null}
+        </Route>
       </Routes>
     </>
   )
