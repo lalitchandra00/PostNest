@@ -29,6 +29,7 @@ function App() {
               <Route path="connections" element={<Connections />} />
               <Route path="profile" element={<Profile />} />
               <Route path="profile/:profileId" element={<Profile />} />
+              <Route path="createpost" element={<CreatePost />} />
             </>
           ) : null}
         </Route>

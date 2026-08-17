@@ -3,6 +3,7 @@ import logo from "../assets/logo.svg"
 import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import { menuItemsData } from './menuItemsData.js'
+import { CirclePlus } from 'lucide-react'
 
 function Sidebar({ Sidebar_open, setSidebar_open }) {
   const navigate = useNavigate();
@@ -22,6 +23,14 @@ function Sidebar({ Sidebar_open, setSidebar_open }) {
             <span>{item.label}</span>
           </NavLink>
         ))}
+        <button
+          type="button"
+          className="mt-6 ml-6 flex w-[170px] items-center justify-center gap-2 rounded-full bg-gradient-to-r  from-indigo-500 to-purple-600 px-6 py-3 text-white shadow-md  duration-200 hover:from-indigo-600 hover:to-purple-700 hover:scale-105"
+          onClick={() => navigate('/createpost')} 
+        >
+          <span>Create Post</span>
+          <CirclePlus className="h-5 w-5 mt-0.5 " />
+        </button>
       </aside>
     </div>
 
