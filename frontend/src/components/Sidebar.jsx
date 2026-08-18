@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { menuItemsData } from './menuItemsData.js'
 import { dummyUserData } from "../assets/assets"
 import { CirclePlus, LogOut } from 'lucide-react'
-import { useClerk } from '@clerk/react'
+import { UserButton, useClerk } from '@clerk/react'
 
 function Sidebar({ Sidebar_open, setSidebar_open }) {
   const navigate = useNavigate();
@@ -35,12 +35,16 @@ function Sidebar({ Sidebar_open, setSidebar_open }) {
           <CirclePlus className="h-5 w-5 mt-0.5 " />
         </button>
 
-        <div className="mt-auto px-5 py-4 flex flex-row gap-3" onClick={() => navigate('/profile')}>
+        <div className="mt-auto px-5 py-4 flex flex-row gap-3"
+        //  onClick={() => navigate('/profile')}
+         >
 
-          <img className='rounded-full size-10' src={user.profile_picture} alt="" />
+          <UserButton/> 
+          {/* No need for this as we are using UserButton from clerk which gives options to manage account data which is handled by clerk  */}
+          {/* <img className='rounded-full size-10' src={user.profile_picture} alt="" /> */}
           <div className='flex flex-col '>
             <p className='m-0 font-bold'>{user.full_name}</p>
-            <p className='m-0 text-sm'>@{user.username}</p> 
+            <p className='m-0 text-sm'>@{user.username}</p>  
             
           </div>
           <LogOut className="w-4 cursor-pointer text-gray-600 mt-3 ml-4 " onClick={signOut} />
