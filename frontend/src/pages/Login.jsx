@@ -71,18 +71,7 @@ function Login() {
             />
           </div>
 
-          {/*             
-            {form === "login" ? 
-            <form className = "absolute right-5">
-                {form === "login"}
-                hii
-              </form>
-            :
-              <form className = "absolute right-25">
-                {form === "signup"}
-                <input className = "border" placeholder = "username" type="text" />
-              </form>
-            } */}
+        
 
         </div>
       </div>
