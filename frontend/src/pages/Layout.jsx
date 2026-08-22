@@ -12,7 +12,7 @@ function Layout() {
   return user ? (
     <div className = "flex">
       <Sidebar Sidebar_open = {Sidebar_open} setSidebar_open = {setSidebar_open}/>
-      <div>
+      <div className="flex-1">
         <Outlet />
       </div>
 
